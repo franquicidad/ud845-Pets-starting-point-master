@@ -77,16 +77,21 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
         /** Examine the intent that was used to launch this activity,
          * In order to figure out if we are creating a new pet or editing an existing one*/
+        if(mCurrentPetUri ==null){
+            Toast.makeText(this,"No Pet to edit",Toast.LENGTH_LONG).show();
+        }else {
 
-        Intent intent=getIntent();
-        Uri currentPetUri=intent.getData();
+            Intent intent = getIntent();
+            Uri currentPetUri = intent.getData();
+            getSupportLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
 
-        /**if the intent DOES NOT contain an URI, then we are creating a new pet*/
-        if(currentPetUri==null){
-            /**As this is a new pet then change the title bar to display create pet*/
-            setTitle("Create a Pet");
-        }else{
-            setTitle("Edit pet");
+            /**if the intent DOES NOT contain an URI, then we are creating a new pet*/
+            if (currentPetUri == null) {
+                /**As this is a new pet then change the title bar to display create pet*/
+                setTitle("Create a Pet");
+            } else {
+                setTitle("Edit pet");
+            }
         }
 
 
@@ -99,7 +104,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
         setupSpinner();
 
-        getSupportLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
 
 
     }
