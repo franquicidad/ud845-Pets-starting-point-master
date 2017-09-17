@@ -78,7 +78,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
 
         listView.setAdapter(mCursorAdapter);
 
-        getSupportLoaderManager().initLoader(PET_LOADER, null, this);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -92,6 +91,9 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
                 startActivity(intent);
             }
         });
+
+        getSupportLoaderManager().initLoader(PET_LOADER, null, this);
+
 
 
     }

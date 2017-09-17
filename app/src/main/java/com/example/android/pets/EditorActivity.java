@@ -89,7 +89,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             setTitle("Edit pet");
         }
 
-        getSupportLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
 
 
         // Find all relevant views that we will need to read user input from
@@ -99,6 +98,9 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         mGenderSpinner = (Spinner) findViewById(R.id.spinner_gender);
 
         setupSpinner();
+
+        getSupportLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
+
 
     }
 
