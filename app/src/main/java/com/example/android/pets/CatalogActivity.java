@@ -54,6 +54,8 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
 
     private ListView listView;
 
+    public Uri CatalogCurrentPetUri;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,8 +88,8 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
                 /**This returns the Uri with the Id of the Pet Selected on the listView.
                  *
                  */
-                Uri currentPetUri= ContentUris.withAppendedId(PetEntry.CONTENT_URI,id);
-                intent.setData(currentPetUri);
+                CatalogCurrentPetUri= ContentUris.withAppendedId(PetEntry.CONTENT_URI,id);
+                intent.setData(CatalogCurrentPetUri);
                 startActivity(intent);
             }
         });

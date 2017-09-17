@@ -62,6 +62,8 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     /** Content URI for the existing pet (null if it's a new pet) */
     private Uri mCurrentPetUri;
 
+
+
     /**
      * Gender of the pet. The possible values are:
      * 0 for unknown gender, 1 for male, 2 for female.
