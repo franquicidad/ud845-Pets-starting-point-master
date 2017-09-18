@@ -288,10 +288,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
         // If this is a new pet, hide the "Delete" menu item.
-        if (mCurrentPetUri == null) {
-            MenuItem menuItem = menu.findItem(R.id.action_delete);
-            menuItem.setVisible(false);
-        }
+        getMenuInflater().inflate(R.menu.menu_editor, menu);
         return true;
     }
 
